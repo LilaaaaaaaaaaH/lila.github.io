@@ -12,11 +12,23 @@
 <script>
 window.dataLayer = window.dataLayer || [];
 
+dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 dataLayer.push({
- 'event': 'TestEvent',
- 'pagePath': 'https://www.googleanalytics.dev/pancakes',
- 'pageTitle': 'HomePage',
- 'visitorType': 'customer'
+  'event': 'addToCart',
+  'ecommerce': {
+    'currencyCode': 'EUR',
+    'add': {                                // 'add' actionFieldObject measures.
+      'products': [{                        //  adding a product to a shopping cart.
+        'name': 'Triblend Android T-Shirt',
+        'id': '12345',
+        'price': '15.25',
+        'brand': 'Google',
+        'category': 'Apparel',
+        'variant': 'Gray',
+        'quantity': 1
+       }]
+    }
+  }
 });
 </script>
     
